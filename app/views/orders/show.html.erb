@@ -6,5 +6,9 @@
 <h3>收件人</h3>
 <%= @order_info.shipping_name %>, <%= @order_info.shipping_address %>
 <hr>
-<%= link_to("用信用卡結帳", "#", class: "btn btn-danger") %>
-<%= link_to("用 ATM 結帳", "#", class: "btn btn-danger") %>
+<% if !@order.is_paid? %>
+	<%= link_to("用信用卡結帳", pay_with_credit_card_order_path(@order.token), class: "btn btn-danger") %>
+	<%= link_to("用 ATM 結帳", "#", class: "btn btn-danger") %>
+<% else %>
+	<p class="text-center">此訂單已經完成付款囉！</p>
+<% end %>
