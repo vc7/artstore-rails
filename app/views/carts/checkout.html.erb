@@ -1,0 +1,27 @@
+<h2>購物明細</h2>
+
+!! 要補上明細的實作 !!
+
+<h2>訂單資訊</h2>
+
+<%= simple_form_for @order do |form| %>
+	<%= form.simple_fields_for :info do |info_form| %>
+		<strong>訂購人</strong>
+		<div>
+			<%= info_form.input :billing_name %>
+		</div>
+		<div>
+			<%= info_form.input :billing_address %>
+		</div>
+		<strong>收貨人</strong>
+		<div>
+			<%= info_form.input :shipping_name %>
+		</div>
+		<div>
+			<%= info_form.input :shipping_address %>
+		</div>
+	<% end %>
+	<div>
+		<%= form.submit "生成訂單", class: "btn btn-danger", data: { disable_with: "生成中..." } %>
+	</div>
+<% end %>

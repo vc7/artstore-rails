@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 		end
 	end
 
-	resources :carts, only: [:index]
+	resources :carts, only: [:index] do
+		post "checkout", on: :collection
+	end
+
+	resources :orders, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
