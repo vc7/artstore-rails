@@ -1,0 +1,9 @@
+<h2>訂單明細</h2>
+!! 訂單明細要做 !!
+<h2>寄送資訊</h2>
+<h3>訂購人</h3>
+<%= @order_info.billing_name %>, <%= @order_info.billing_address %>
+<h3>收件人</h3>
+<%= @order_info.shipping_name %>, <%= @order_info.shipping_address %>
+<hr>
+<%= link_to("結帳", "#", class: "btn btn-danger") %>

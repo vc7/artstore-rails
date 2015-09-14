@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 		post "checkout", on: :collection
 	end
 
-	resources :orders, only: [:create]
+	resources :orders, only: [:create, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
