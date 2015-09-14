@@ -1,1 +1,14 @@
 <h2>購物車</h2>
+
+!! 要記得把購物車列出來 !!
+
+<table>
+	<tr>
+		<th></th>
+	</tr>
+</table>
+
+<hr>
+總計： <%= render_cart_total_price(current_cart) %> 元
+<hr>
+<%= link_to("確認訂單", "#", class: "btn btn-primary") %>
